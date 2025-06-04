@@ -96,10 +96,21 @@ function setupCalculator() {
   buttons.addEventListener('click', handleButtonClick);
 }
 
+function setupHeadingUpdater() {
+  const heading = document.getElementById('dynamic-heading') as HTMLElement;
+  const input = document.getElementById('heading-input') as HTMLInputElement;
+  const button = document.getElementById('update-heading-button') as HTMLButtonElement;
+
+  button.addEventListener('click', () => {
+    heading.textContent = input.value;
+  });
+}
+
 function main() {
   setupClickCounter();
   setupTimer();
   setupCalculator();
+  setupHeadingUpdater();
 }
 
 main();
